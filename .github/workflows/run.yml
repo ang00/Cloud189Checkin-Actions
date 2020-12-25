@@ -24,8 +24,9 @@ jobs:
       
     - name: requirements
       run: |
+        pip3 install --upgrade pip
         pip3 install -r requirements.txt
-        
+
     - name: Checkin
       run: |
         sed -i 's|SCKEY = ""|SCKEY = "${{ secrets.SCKEY }}"|' C189Checkin.py
